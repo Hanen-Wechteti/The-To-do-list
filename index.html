@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
-    <script defer src="assets/js/script.js"></script>
+    <script   defer src="assets/js/script.js"></script>
+    
     <title>Document</title>
 </head>
 <body>
     
     <section class = "container">
-        <h1 class="container_title"> The to do list </h1>
-        <form class="container_task" id="containerTask" >
-            <input type="text" class="new_task" id="newTask" placeholder="add a new task">
-            <button type="submit" class="task_button" value ="add" onclick="addTask()">
-                add </button>
-            </form>
-        <ul id="tabList" class="container_list">
-
+        <div class="todo-app">
+        <h2>The to do list <img class="taille-img" src="assets/to-do-list-png.png"> </h2>
+        <div class="row">
+            <input type="text" id = "input-box" placeholder="Add your task">
+            <button onclick="AddTask()">Add</button>
+        </div>
+        
+        <ul id = "list-container">
         </ul>
-        <button id="delete" class="container_delete" onclick="deleteTask()">
-            delete completed task
-        </button>
+        
+    </div>
+        
            
     </section>
     
