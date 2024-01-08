@@ -1,24 +1,16 @@
+
+import { AddTask } from "./addTask.js";
+import { saveData } from "./saveData.js";
+import { displayTask } from "./displayTask.js";
+
 let inputBox =document.getElementById("input-box");
 let listcontainer = document.getElementById("list-container");
+ let btn = document.getElementById("btn");
+ btn.addEventListener('click', AddTask);
 
-function AddTask() {
-    
 
-    if(inputBox.value === ''){
-        alert("write a task!");
+AddTask();
 
-    }
-    else{
-        let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
-        listcontainer.appendChild(li);
-        let span = document.createElement('span');
-        span.innerHTML = "X";
-        li.appendChild(span); 
-     }
-    inputBox.value ='';
-    saveData()
-}
 
 listcontainer.addEventListener("click", function(e){
     if(e.target.tagName == "LI"){
@@ -31,12 +23,6 @@ listcontainer.addEventListener("click", function(e){
     }
 }, false);
 
-function saveData() {
-    localStorage.setItem("data", listcontainer.innerHTML);
-}
-
-function displayTask() {
-    listcontainer.innerHTML = localStorage.getItem("data");
-
-}
+saveData();
 displayTask();
+
